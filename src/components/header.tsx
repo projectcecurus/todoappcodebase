@@ -68,7 +68,22 @@ export function Header() {
                 Sign Out
               </button>
             </>
-          ) : null}
+          ) : (
+            <>
+              <Link
+                href="/auth"
+                className="rounded-full border border-slate-200 px-4 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/auth"
+                className="inline-flex items-center justify-center rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-card transition hover:bg-brand-700"
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>

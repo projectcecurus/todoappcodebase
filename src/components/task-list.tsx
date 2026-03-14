@@ -1,5 +1,7 @@
 "use client";
 
+import { ReactNode } from "react";
+
 import { EmptyState } from "@/components/empty-state";
 import { TaskItem } from "@/components/task-item";
 import { Task } from "@/types/task";
@@ -11,11 +13,12 @@ type TaskListProps = {
   onToggle: (taskId: string) => void;
   onDelete: (taskId: string) => void;
   onEdit: (task: Task) => void;
+  emptyAction?: ReactNode;
 };
 
-export function TaskList({ tasks, emptyTitle, emptyDescription, onToggle, onDelete, onEdit }: TaskListProps) {
+export function TaskList({ tasks, emptyTitle, emptyDescription, onToggle, onDelete, onEdit, emptyAction }: TaskListProps) {
   if (!tasks.length) {
-    return <EmptyState title={emptyTitle} description={emptyDescription} />;
+    return <EmptyState title={emptyTitle} description={emptyDescription} action={emptyAction} />;
   }
 
   return (
